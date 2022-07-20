@@ -1,4 +1,5 @@
 mediapipe
 opencv-python
 cvzone
+numpy
 screeninfo
