@@ -1,7 +1,6 @@
 import cv2
 import cvzone
 from cvzone.HandTrackingModule import HandDetector
-import socket
 from screeninfo import get_monitors
 import numpy as np
 
@@ -14,10 +13,6 @@ cap.set(4, screen.height)
 
 # hand detector
 handdetect = HandDetector(maxHands=2, detectionCon=0.8)
-
-# communication
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-serverAdressPort = ('127.0.0.1', 5052)
 
 
 while True:
