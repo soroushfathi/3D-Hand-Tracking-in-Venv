@@ -38,7 +38,6 @@ while True:
             cv2.line(img, point1[:2], point2[:2], (0, 255, 0), 4)
             w, _ = handdetect.findDistance((point1[0], point1[1]), (point2[0], point2[1]))
             W = 7
-
             # find the focal
             # d = 40
             # f = (w*d) // W
@@ -53,7 +52,7 @@ while True:
             for lm in lmlist:
                 data.extend([lm[0], screen.height - lm[1], int(dis)])
         sock.sendto(str.encode(str(data)), serverAdressPort)
-    # img = cv2.resize(img, (0, 0), None, 0.5, 0.5)
     imgStack = cvzone.stackImages([img, imgContour], 2, 0.5)
-    cv2.imshow('win', imgStack)
+    img = cv2.resize(img, (0, 0), None, 0.40, 0.40)
+    cv2.imshow('win', img)
     cv2.waitKey(1)

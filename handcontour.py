@@ -24,16 +24,6 @@ while True:
     success, img = cap.read()
     img = cv2.flip(img, 1)
     hands, img = handdetect.findHands(img)
-    # Landmark values - (x,y,z) * 21
-    # data = []
-    # if hands:
-    #     for hand in hands:
-    #         lmlist = hand['lmList']
-    #         for lm in lmlist:
-    #             data.extend([lm[0], screen.height - lm[1], lm[2]])
-    #     sock.sendto(str.encode(str(data)), serverAdressPort)
-    # img = cv2.resize(img, (0, 0), None, 0.5, 0.5)
-
     # define the upper and lower boundaries of the HSV pixel intensities
     # to be considered 'skin'
     imgContours = img.copy()
